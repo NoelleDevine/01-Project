@@ -1,0 +1,51 @@
+body {
+  font-family: "Cormorant Garamond", serif;
+  background-color: #b71b9e;
+  margin: 0%;
+  padding: 0%;
+}
+.bag-shopping {
+  position: fixed;
+  height: 50px;
+  right: 5px;
+  top: 5px;
+}
+
+header {
+  font-family: "Dancing Script", cursive;
+  font-family: "Open Sans", sans-serif;
+  background-color: white;
+  width: 100%;
+}
+.img {
+  align-content: end;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+  background-color: black;
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+h3 {
+  margin: 0;
+  background-color: lightgrey;
+  font-family: "Cormorant Garamond";
+  width: 100%;
+  text-align: center;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  width: 100%;
+}
