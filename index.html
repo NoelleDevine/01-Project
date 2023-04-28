@@ -25,8 +25,12 @@
   </head>
   <body>
     <header>
-      <img class="bag-shopping" src="images/bag-shopping.svg" />
-      <h1>Grandiose Parfums<img src="images/spray-bottle.gif" /></h1>
+      <img class="bag-shopping show-form" src="images/bag-shopping.svg" />
+      <h1>
+        <img class="spayBottle1" src="images/spray-bottle-left.gif" />Grandiose
+        Parfums
+        <img class="spayBottle" src="images/spray-bottle.gif" />
+      </h1>
     </header>
     <h2>Fragrances</h2>
 
@@ -34,12 +38,19 @@
     <main>
       <div id="items-container"></div>
       <div id="cart">
-        <h2>Cart</h2>
+        <!-- <h2>Cart</h2> -->
         <div id="cart-items"></div>
-        <p>Total: <span id="cart-total">$0.00</span></p>
-        <button id="checkout-button">Checkout</button>
       </div>
+
+      <form class="checkOut">
+        <p>Sub-total: <span id="cart-total">$0.00</span></p>
+        <button class="keepShopping">Keep Shopping</button>
+        <button class="payCash">Pay with Cash</button>
+        <!-- <button id="checkout-button">Checkout</button> -->
+        <button class="payCC">Pay with Credit Card</button>
+      </form>
     </main>
+
     <footer>Hamsters</footer>
 
     <script src="script.js"></script>

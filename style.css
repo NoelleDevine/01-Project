@@ -3,7 +3,25 @@ body {
   background-color: #b71b9e;
   margin: 0%;
   padding: 0%;
+  position: relative;
 }
+.sprayBottle1 {
+  margin: 0px;
+  padding: 5px;
+  height: 50px;
+}
+
+.checkOut {
+  border: medium solid black;
+  display: none;
+}
+
+.sprayBottle {
+  margin: 0px;
+  padding: 5px;
+  height: 50px;
+}
+
 .bag-shopping {
   position: fixed;
   height: 50px;
@@ -11,11 +29,73 @@ body {
   top: 5px;
 }
 
+#items-container {
+  margin: 20px;
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-auto-rows: 200px;
+  grid-gap: 80px 20px;
+}
+
+.item-name {
+  font-weight: 1000;
+}
+
+.item-price {
+  font-weight: 1000;
+  padding: 5px;
+}
+
+.formDoNotDisplay {
+  display: none;
+}
+
+.popUp {
+  /* overflow-y: auto; */
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  /* align-items: center; */
+  /* flex: 1 1 0%; */
+  /* padding: 16px 16px 32px; */
+  /* display: block; */
+}
+
+.keepShopping,
+.payCash,
+.payCC {
+}
+
+/* .close-form {
+  display: none;
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center; */
+
+.bag-shopping:hover {
+  background-color: #b71b9e;
+  cursor: pointer;
+}
+
 header {
   font-family: "Dancing Script", cursive;
   font-family: "Open Sans", sans-serif;
   background-color: white;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 .img {
   align-content: end;
@@ -25,6 +105,8 @@ h1 {
   margin: 0;
   font-family: "Dancing Script", cursive;
   text-align: center;
+  font-weight: 1800;
+  font-size: 5000;
 }
 
 h2 {
@@ -45,7 +127,11 @@ h3 {
 }
 
 footer {
+  position: fixed;
+  margin-top: 25px;
+  bottom: 0;
   background-color: black;
   color: white;
   width: 100%;
+  box-sizing: border-box;
 }

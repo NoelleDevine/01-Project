@@ -1,18 +1,53 @@
+const shoppingBag = document.querySelector(".bag-shopping");
+const checkOut = document.querySelector(".checkOut");
+
 const items = [
   { name: "Delina Exclusif", img: "images/Delina.jpg", price: 201.99 },
   {
     name: "Killian's Love Don't Be Shy",
     img: "images/killian.jpg",
-    price: 5.99,
+    price: 199.99,
   },
-  { name: "Bacarat Rouge 540 Extract", price: 7.99 },
-  { name: "Christian Dior Poison", price: 12.99 },
-  { name: "Replica By The Fireplace", price: 8.99 },
-  { name: "Gucci Guilty", price: 6.99 },
-  { name: "Tom Ford Lost Cherry", price: 14.99 },
-  { name: "Yves St. Laurent Libre Intense", price: 9.99 },
-  { name: "Item 9", price: 11.99 },
-  { name: "Item 10", price: 13.99 },
+  {
+    name: "Bacarat Rouge 540 Extract",
+    img: "images/baccarat.png",
+    price: 325.0,
+  },
+  {
+    name: "Christian Dior Poison",
+    img: "images/diorPoison.png",
+    price: 69.95,
+  },
+  {
+    name: "Replica By The Fireplace",
+    img: "images/replica.png",
+    price: 125,
+  },
+  {
+    name: "Gucci Guilty",
+    img: "images/gucci.png",
+    price: 103,
+  },
+  {
+    name: "Tom Ford Lost Cherry",
+    img: "images/TomFord.png",
+    price: 250,
+  },
+  {
+    name: "Yves St. Laurent Libre Intense",
+    img: "images/yves.png",
+    price: 250,
+  },
+  {
+    name: "Acqua di Gioia",
+    img: "images/aqua.png",
+    price: 105,
+  },
+  {
+    name: "Chanel No 5",
+    img: "images/chanel.png",
+    price: 160,
+  },
 ];
 
 // Define the function to display the items
@@ -24,7 +59,7 @@ function displayItems() {
     const itemDiv = document.createElement("div");
     itemDiv.classList.add("item");
     itemDiv.innerHTML = `
-        <img src=${item.img}>
+        <img height="200px" src=${item.img}>
           <div class="item-name">${item.name}</div>
           <div class="item-price">$${item.price.toFixed(2)}</div>
           <button class="add-to-cart" onclick="addToCart(${i})">Add to Cart</button>
@@ -35,15 +70,15 @@ function displayItems() {
 
 // Define the function to add an item to the cart
 function addToCart(itemIndex) {
-  const item = items[itemIndex];
-  const cart = document.getElementById("cart");
+  const item = items[itemIndex]; //an array of what we have selected to put in the cart
+  //const cart = document.getElementById("cart");
   const cartItem = document.createElement("div");
   cartItem.classList.add("cart-item");
-  cartItem.innerHTML = `
+  cartItem.innerHTML = `<img height="75px" src=${item.img}>
         <div class="cart-item-name">${item.name}</div>
         <div class="cart-item-price">$${item.price.toFixed(2)}</div>
       `;
-  cart.appendChild(cartItem);
+  checkOut.appendChild(cartItem);
   updateCartTotal();
 }
 
@@ -63,6 +98,19 @@ function updateCartTotal() {
   const cartTotalElement = document.getElementById("cart-total");
   cartTotalElement.textContent = `$${cartTotal.toFixed(2)}`;
 }
+
+shoppingBag.addEventListener("click", (e) => {
+  checkOut.classList.add("popUp");
+});
+
+checkOut.addEventListener("click", (e) => {
+  if (e.target.classList.contains("keepShopping")) {
+    checkOut.classList.add("formDoNotDisplay");
+  }
+  //pay cash
+
+  //pay with CC -> clear this form or show another???
+});
 
 // Call the displayItems function to display the items on page load
 displayItems();
