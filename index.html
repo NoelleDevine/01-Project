@@ -42,13 +42,56 @@
         <div id="cart-items"></div>
       </div>
 
-      <form class="checkOut">
+      <section class="checkOut">
         <p>Sub-total: <span id="cart-total">$0.00</span></p>
         <button class="keepShopping">Keep Shopping</button>
-        <button class="payCash">Pay with Cash</button>
-        <!-- <button id="checkout-button">Checkout</button> -->
-        <button class="payCC">Pay with Credit Card</button>
-      </form>
+        <button class="payCashButton">Pay with Cash</button>
+        <button class="payCCButton">Pay with Credit Card</button>
+      </section>
+
+      <section class="payWithCash DoNotDisplay">
+        <!-- input cash amount display change-->
+
+        <p>Sub-total: <span id="cart-total-cash">$0.00</span></p>
+        <p>Sales Tax (6%): <span id="total-tax">$0.00</span></p>
+        <p>Total: <span id="total">$0.00</span></p>
+        <form>
+          <div>
+            <label for="amountOfCash">Enter Cash: $</label>
+            <input
+              type="text"
+              id="amountOfCash"
+              placeholder="00.00"
+            /><!--did not use number input because decimals not in arrows-->
+
+            <button>Print Receipt</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="payWithCC DoNotDisplay">
+        <!-- credit card inputs -->
+        <form>
+          <div>
+            <label for="ccNum">Card Number</label>
+            <input type="text" id="ccNum" placeholder="1234 5678 9012 3456" />
+          </div>
+          <div>
+            <label for="cName">Name on Card</label>
+            <input type="text" id="cName" placeholder="John Doe" />
+          </div>
+          <div>
+            <label for="cExpiry">Expiration Date</label>
+            <input type="text" id="cExpiry" placeholder="MM / YY" />
+          </div>
+          <div>
+            <label for="cCVV">CVV</label>
+            <input type="text" id="cCVV" placeholder="123" />
+          </div>
+          <button type="submit">Submit Payment</button
+          ><!--This is Print Reciept button-->
+        </form>
+      </section>
     </main>
 
     <footer>Hamsters</footer>
