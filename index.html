@@ -43,10 +43,12 @@
       </div>
 
       <section class="checkOut">
+        <h2 style="text-align: center">Shopping Bag</h2>
         <p>Sub-total: <span id="cart-total">$0.00</span></p>
         <button class="keepShopping">Keep Shopping</button>
         <button class="payCashButton">Pay with Cash</button>
         <button class="payCCButton">Pay with Credit Card</button>
+        <div class="shoppingBagContainer"></div>
       </section>
 
       <section class="payWithCash DoNotDisplay">
@@ -64,14 +66,36 @@
               placeholder="00.00"
             /><!--did not use number input because decimals not in arrows-->
 
-            <button>Print Receipt</button>
+            <button class="PrintReceipt">Print Receipt</button>
           </div>
         </form>
       </section>
 
+      <section class="ReceiptView DoNotDisplay">
+        <!-- input cash amount display change-->
+        <h2 style="text-align: center">Receipt</h2>
+        <p>Sub-total: <span id="cart-total-receipt">$0.00</span></p>
+        <p>Sales Tax (6%): <span id="total-tax-receipt">$0.00</span></p>
+        <p>Total: <span id="total-receipt">$0.00</span></p>
+        <p>Amount Tendered: $ <span id="amount-given">$0.00</span></p>
+        <p class="ChangeOnOff">
+          Change Returned: <span id="return-change">$0.00</span>
+        </p>
+
+        <div class="PurchasedItems">
+          Items Purchased
+
+          <div id="purchased-items"></div>
+        </div>
+
+        <h3 style="text-align: center">
+          Thanks for your Purchase. Now you'll smell better!
+        </h3>
+      </section>
+
       <section class="payWithCC DoNotDisplay">
         <!-- credit card inputs -->
-        <form>
+        <form class="creditCardForm">
           <div>
             <label for="ccNum">Card Number</label>
             <input type="text" id="ccNum" placeholder="1234 5678 9012 3456" />
@@ -88,14 +112,22 @@
             <label for="cCVV">CVV</label>
             <input type="text" id="cCVV" placeholder="123" />
           </div>
-          <button type="submit">Submit Payment</button
+          <button class="payWithCard" type="submit">Submit Payment</button
           ><!--This is Print Reciept button-->
         </form>
       </section>
     </main>
 
-    <footer>Hamsters</footer>
-
+    <footer>
+      Free Hamster With Purchase
+      <nav>
+        <ul>
+          <li><a href="#"></a><i class="fa-brands fa-facebook-f"></i></li>
+          <li><a href="#"></a><i class="fa-brands fa-twitter"></i></li>
+          <li><a href="#"></a><i class="fa-brands fa-instagram"></i></li>
+        </ul>
+      </nav>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
