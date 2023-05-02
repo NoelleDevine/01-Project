@@ -15,55 +15,65 @@ const items = [
     name: "Delina Exclusif",
     img: "images/Delina.jpg",
     price: 201.99,
+    description: "You spend too much time on TikTok",
   },
   {
     name: "Killian's Love Don't Be Shy",
     img: "images/killian.jpg",
     price: 199.99,
+    description: "You will get a ring by spring",
   },
   {
     name: "Bacarat Rouge 540 Extract",
     img: "images/baccarat.png",
     price: 325.0,
+    description: "Your whole paycheck",
   },
   {
     name: "Christian Dior Poison",
     img: "images/diorPoison.png",
     price: 69.95,
+    description: "When you think flowers are sexy",
   },
   {
     name: "Replica By The Fireplace",
     img: "images/replica.png",
     price: 125,
+    description: "The perfume sales lady was hot",
   },
   {
     name: "Gucci Guilty",
     img: "images/gucci.png",
     price: 103,
+    description: "When you want to smell like everybody else at the club",
   },
   {
     name: "Tom Ford Lost Cherry",
     img: "images/TomFord.png",
     price: 250,
+    description: "Smell like fresh doughnuts in the morning",
   },
   {
     name: "Yves St. Laurent Libre Intense",
     img: "images/yves.png",
     price: 250,
+    description: "You work so much you don't have time to shower",
   },
   {
     name: "Acqua di Gioia",
     img: "images/aqua.png",
     price: 105,
+    description: "You couldn't afford to actually take her to an island",
   },
   {
     name: "Chanel No 5",
     img: "images/chanel.png",
     price: 160,
+    description: "Smell like and old lady",
   },
 ];
 
-// Define the function to display the items
+// Define the function to display the items on the main page
 function displayItems() {
   const itemsContainer = document.getElementById("items-container");
   itemsContainer.innerHTML = "";
@@ -71,8 +81,9 @@ function displayItems() {
     const item = items[i];
     const itemDiv = document.createElement("div");
     itemDiv.classList.add("item");
-    itemDiv.innerHTML = `
-        <img height="200px" src=${item.img}>
+    itemDiv.innerHTML = `<div class="descriptionContainer">
+        <span class="perfumeDescription">${item.description}</span>
+        <img class="descriptionHover" height="200px" src=${item.img}></div>
           <div class="item-name">${item.name}</div>
           <div class="item-price">$${item.price.toFixed(2)}</div>
           <button class="add-to-cart" onclick="addToCart(${i})">Add to Cart</button>`;
